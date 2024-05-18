@@ -52,7 +52,12 @@ async function testGetElements(uploadId, batchSize) {
 }
 
 async function main() {
-  const uploadId = await testUpload('path/to/pdf'); // Update the path before running test
+  const fPath = 'path/to/pdf'; // Update the path before running test
+  if (fPath === 'path/to/pdf') {
+    console.log('Update the file path to run the test');
+    return
+  }
+  const uploadId = await testUpload(); 
   if (uploadId) {
     await testGetElements(uploadId, 3);
     await testDelete(uploadId);
