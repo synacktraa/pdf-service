@@ -57,7 +57,7 @@ async function main() {
     console.log('Update the file path to run the test');
     return
   }
-  const uploadId = await testUpload(); 
+  const uploadId = await testUpload(fPath); 
   if (uploadId) {
     await testGetElements(uploadId, 3);
     await testDelete(uploadId);
