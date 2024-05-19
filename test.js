@@ -40,7 +40,8 @@ async function testGetElements(uploadId, batchSize) {
     });
 
     response.data.on('data', chunk => {
-      console.log('Chunk:', chunk.toString());
+      console.log(JSON.parse(chunk.toString().slice(6).trimEnd()))
+      console.log('-------------------------------------------')
     });
 
     response.data.on('end', () => {
